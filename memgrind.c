@@ -197,7 +197,7 @@ int checkAllocations(int numberOfLoops, char* file, int line) {
 	for (i = 0; i < numberOfLoops; i++) {
 		for (j = 0; j < 1365; j++) {
 			// Fill the myBlock array with 1 byte pointers and assign them an arbitrary value
-			pointers[j] = malloc(1);
+			pointers[j] = malloc(sizeof(char));
 			*pointers[j] = 'a';
 		}
 		for (j = 0; j < 1365; j++) {
