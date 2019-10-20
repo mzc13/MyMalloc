@@ -1,0 +1,14 @@
+Test Case E:
+This test case was used to ensure mymalloc works even when we fill the array to maximum capacity.
+The test case splits myBlock in half, and in each half it allocates either one pointer for the 
+entire half, or enough pointers to fill the half with one byte allocations. Since our metadata is
+two bytes, one pointer that fills half of myBlock would be size 2046 bytes, and 682 pointers each
+with size one byte would also fill half of myBlock. After myBlock is filled, all the pointers are
+freed. This is repeated 10 times.
+
+Test Case F:
+This test case was used to ensure mymalloc actually returns useable pointers. The test case fills
+all of myBlock with 1365 allocations each one byte large. After each pointer is returned, a char
+is stored at the memory location. Then, all the pointers are dereferenced and the value is compared
+to the char that was originally stored. If this test fails, it would mean our library is not
+working properly. This test case is also repeated 10 times.
